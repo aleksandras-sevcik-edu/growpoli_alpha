@@ -1,0 +1,15 @@
+The program is based on Monte Carlo method that rely on repeated random sampling to obtain numerical results as polymer growth
+upon irradiation can be described by a probabilistic interpretation. The code creates a simulation box of the desired size and 
+chemical composition: the type of material of interest and its concentration, i.e. number of the material molecules per the 
+volume of the box as well as their initial configuration. Several different types of material can be added. The molecules are
+approximated as  geometrical cuboid bodies with the required length, width, and height that can connect with each other at the c
+ertain angle and the configuration of the actual polymer can be achieved.
+Once the initial state of the box is generated with the randomly placed molecular bodies,  the box is irradiated, and the set 
+number of iterations will run applying the following algorithm:
+    1.	The random unit cell selection in the simulation box equivalent to water radical initiation.
+    2.	Identification and selection of molecules close to the event point
+    3.	Radiation induced event probability calculation based on material capture coefficient, surrounding radiation field and the 
+    configuration of initial molecular bodies at the event center:
+        a.	Connection event
+        b.	Break-down event
+    4.	Translation and rotation of the molecular structure according to its momentum of inertia
