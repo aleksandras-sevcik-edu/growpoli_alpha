@@ -502,30 +502,30 @@ MCDriver::prepare_statistics(UnitBox &box, int box_nr, int initial_monomers, int
     for (auto p = 0; p < box.number_of_polymers(); p++)
         sum_lengths += box.polymer(p).number_of_monomers();
     my_file << "Average length of result polymers: " << sum_lengths / box.number_of_polymers() << std::endl;
-    my_file << "Activations: " << activations << std::endl;
-    my_file << "Connections (incl rot): attempts " << contry << " Succeeded " << connections << std::endl;
-    my_file << "Divisions (incl rot): attempts " << divtry << " Succeeded " << divisions << std::endl;
-    my_file << "Rotations: attempts " << rostats[0] << " Succeeded " << rostats[1] << std::endl;
-    std::cout << "Preparing branching statistics" << std::endl;
-    my_file << "Branching statistics calculation " << std::endl;
+    my_file<<"\nActivations: " <<activations<<std::endl;
+    my_file<<"Connections (incl rot): attempts "<<contry<<" Succeeded "<<connections<<std::endl;
+    my_file<<"Divisions (incl rot): attempts "<<divtry<<" Succeeded "<<divisions<<std::endl;
+    my_file<<"Rotations: attempts "<<rostats[0]<<" Succeeded "<<rostats[1]<<std::endl;
+    std::cout<<"Preparing branching statistics"<<std::endl;
+    my_file<<"Branching statistics calculation "<<std::endl;
     std::vector<float> average_number, average_length, correlation;
     box.calculate_branching_alternative(average_number, average_length, correlation);
-    my_file << "Average branch number: " << std::endl;
-    for (auto &i: average_number) my_file << i << "  ";
+    my_file<<"Average branch number: "<<std::endl;
+    for (auto &i : average_number) my_file<<i<<"  ";
     my_file << std::endl;
-    my_file << "Average branch length: " << std::endl;
-    for (auto &i: average_length) my_file << i << "  ";
+    my_file<<"Average branch length: "<<std::endl;
+    for (auto &i : average_length) my_file<<i<<"  ";
     my_file << std::endl;
     my_file << "Correlation: " << std::endl;
     for (auto &i: average_number) my_file << i << "  ";
     my_file << std::endl;
-    std::cout << "Preparing connections statistics" << std::endl;
+    std::cout<<"Preparing connections statistics"<<std::endl;
     my_file << "Detail Connections: " << std::endl;
-    for (auto &s: constats) my_file << s[0] << ":" << s[1] << "-" << s[2] << ", ";
+    for (auto &s : constats) my_file<<s[0]<<":"<<s[1]<<"-"<<s[2]<<", ";
     my_file << std::endl;
-    std::cout << "Preparing division statistics" << std::endl;
+    std::cout<<"Preparing division statistics"<<std::endl;
     my_file << "Detail Divisions: " << std::endl;
-    for (auto &s: divstats) my_file << s << " : ";
+    for (auto &s : divstats) my_file<<s<<" : ";
     my_file << std::endl;
 }
 
